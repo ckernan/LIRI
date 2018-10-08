@@ -7,6 +7,8 @@ const inquirer = require("inquirer");
 const moment = require("moment");
 const Spotify = require("node-spotify-api");
 const spotify = new Spotify(keys.spotify);
+const Twitter = require('twitter');
+const twitter = new Twitter(keys.twitter);
 
 
 function liriPrompt(){
@@ -14,23 +16,39 @@ function liriPrompt(){
         type: "list",
         message: "What would you like LIRI to do?",
         name: "choice",
-        choices: ["concert-this", "movie-this", "spotify-this-song", "do-what-it-says"]
+        choices: ["my tweets", "concert this", "movie this", "spotify this", "do what it says"]
     }]).then(response => {
         switch(response.choice) {
-            case "concert-this":
+            case "my tweets":
+                myTweets();
+                break;
+            case "concert this":
                 concertThis();
                 break;
-            case "movie-this":
+            case "movie this":
                 movieThis();
                 break;
-            case "spotify-this-song":
+            case "spotify this":
                 spotifyThis();
-            case "do-what-it-says":
+            case "do what it says":
                  doWhatItSays();
                  break;
         }
     })
 };
+
+function myTweets(){
+    twitter.get('statuses/user_timeline', { screen_name: "twitter", count: 10 }, function(error, tweets, response) {
+        if (error) throw error;
+
+        for (let i = 0; i < tweets.length; i++) {
+            let printTweets = (i + ". " + tweets[i].created_at + " : " + tweets[i].text + "\n");
+            console.log(printTweets);
+        }
+
+        liriPrompt();
+    });
+}
 
 function concertThis(){
     inquirer.prompt([{
@@ -39,18 +57,18 @@ function concertThis(){
         name: "bandName"
     }]).then(bandChoice => {
         request("https://rest.bandsintown.com/artists/" + bandChoice.bandName + "/events?app_id=codingbootcamp", function(error, response, body){
-            let data = JSON.parse(body)
+            if (!error && response.statusCode === 200){
+                let data = JSON.parse(body)
 
-            let concertInfo = 
-                 "\nVenue: " + data[0].venue.name +
-                 "\nLocation: " + data[0].venue.city +
-                 "\nDate: " + moment(data[0].datetime).format("MM/DD/YYYY") + "\n";
+                let concertInfo = 
+                     "\nVenue: " + data[0].venue.name +
+                     "\nLocation: " + data[0].venue.city +
+                     "\nDate: " + moment(data[0].datetime).format("MM/DD/YYYY") + "\n";
 
-             if (!error && response.statusCode === 200){
                 console.log(concertInfo);
                 liriPrompt();
                 
-             }
+            }
         })
     })
 };
@@ -92,6 +110,7 @@ function spotifyThis(){
         message: "What song would like to know more about?",
         name: "songName"
     }]).then(songChoice => {
+        console.log(songChoice.songName)
         if(!songChoice.songName){
             songChoice.songName = "The Sign Ace of Base";
         };
@@ -118,7 +137,36 @@ function spotifyThis(){
 };
 
 function doWhatItSays(){
+    fs.readFile("random.txt", "utf8", function(err, data){
+        if(err) {
+            return console.log(err)
+        }
+
+        let txtArr = data.split(",");
+        console.log(txtArr)
+
+        switch(txtArr[0]) {
+            case "spotify-this-song":
+            spotify.search({ type: 'track', query: txtArr[1] }, function(err, data) {
+                if ( err ) {
+                    console.log('Error occurred: ' + err);
+                    return;
+                } 
     
+                let song = data.tracks.items[0];
+    
+                let songInfo = 
+                    "\nArtist: " + JSON.stringify(song.album.artists[0].name) +
+                    "\nSong Title: " + JSON.stringify(song.name) + 
+                    "\nPreview Link: " + JSON.stringify(song.preview_url) +
+                    "\nAlbum: " + JSON.stringify(song.album.name) + "\n";
+                
+                console.log("stufffff", songInfo);
+                liriPrompt();
+            });
+                break;
+        }
+    })
 }
 
 liriPrompt();
