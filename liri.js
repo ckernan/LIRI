@@ -40,10 +40,16 @@ function concertThis(){
     }]).then(bandChoice => {
         request("https://rest.bandsintown.com/artists/" + bandChoice.bandName + "/events?app_id=codingbootcamp", function(error, response, body){
             let data = JSON.parse(body)
-            // let concertInfo = 
-            //     "\nVenue: " + data[0].venue.name;
+
+            let concertInfo = 
+                 "\nVenue: " + data[0].venue.name +
+                 "\nLocation: " + data[0].venue.city +
+                 "\nDate: " + moment(data[0].datetime).format("MM/DD/YYYY") + "\n";
+
              if (!error && response.statusCode === 200){
-                console.log(data[0].venue.name)
+                console.log(concertInfo);
+                liriPrompt();
+                
              }
         })
     })
