@@ -30,6 +30,7 @@ function liriPrompt(){
                 break;
             case "spotify this":
                 spotifyThis();
+                break;
             case "do what it says":
                  doWhatItSays();
                  break;
@@ -113,8 +114,7 @@ function spotifyThis(){
         message: "What song would like to know more about?",
         name: "songName"
     }]).then(songChoice => {
-        //TESTING FUNCTION...
-        console.log(songChoice.songName)
+
         if(!songChoice.songName){
             songChoice.songName = "The Sign Ace of Base";
         };
@@ -148,11 +148,9 @@ function doWhatItSays(){
         }
 
         let txtArr = data.split(",");
-        //WHY IS THIS LOOGGGINNNNNNGGGG????
-        // console.log(txtArr)
 
         switch(txtArr[0]) {
-            case "sotify-this-song":
+            case "spotify-this-song":
             spotify.search({ type: 'track', query: txtArr[1] }, function(err, data) {
                 if ( err ) {
                     console.log('Error occurred: ' + err);
@@ -167,7 +165,7 @@ function doWhatItSays(){
                     "\nPreview Link: " + JSON.stringify(song.preview_url) +
                     "\nAlbum: " + JSON.stringify(song.album.name) + "\n";
                 
-                console.log("stufffff", songInfo);
+                console.log(songInfo);
                 liriPrompt();
             });
                 break;
