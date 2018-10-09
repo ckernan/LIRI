@@ -44,6 +44,7 @@ function myTweets(){
         for (let i = 0; i < tweets.length; i++) {
             let printTweets = (i + ". " + tweets[i].created_at + " : " + tweets[i].text + "\n");
             console.log(printTweets);
+            appendLog(printTweets);
         }
 
         liriPrompt();
@@ -66,6 +67,7 @@ function concertThis(){
                      "\nDate: " + moment(data[0].datetime).format("MM/DD/YYYY") + "\n";
 
                 console.log(concertInfo);
+                appendLog(concertInfo);
                 liriPrompt();
                 
             }
@@ -97,6 +99,7 @@ function movieThis(){
                     "\nActors: " + data.Actors + "\n";
             
                 console.log(movieInfo);
+                appendLog(movieInfo);
                 liriPrompt();
             }
         });
@@ -110,6 +113,7 @@ function spotifyThis(){
         message: "What song would like to know more about?",
         name: "songName"
     }]).then(songChoice => {
+        //TESTING FUNCTION...
         console.log(songChoice.songName)
         if(!songChoice.songName){
             songChoice.songName = "The Sign Ace of Base";
@@ -129,6 +133,7 @@ function spotifyThis(){
                 "\nAlbum: " + JSON.stringify(song.album.name) + "\n";
             
             console.log(songInfo);
+            appendLog(songInfo);
             liriPrompt();
 
 
@@ -143,10 +148,11 @@ function doWhatItSays(){
         }
 
         let txtArr = data.split(",");
-        console.log(txtArr)
+        //WHY IS THIS LOOGGGINNNNNNGGGG????
+        // console.log(txtArr)
 
         switch(txtArr[0]) {
-            case "spotify-this-song":
+            case "sotify-this-song":
             spotify.search({ type: 'track', query: txtArr[1] }, function(err, data) {
                 if ( err ) {
                     console.log('Error occurred: ' + err);
@@ -169,4 +175,12 @@ function doWhatItSays(){
     })
 }
 
+function appendLog(data){
+    fs.appendFile("log.txt", data + "\n", function(err) {
+        if(err) {
+            return console.log(err)
+        }
+    })
+
+}
 liriPrompt();
