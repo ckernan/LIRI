@@ -39,13 +39,13 @@ function liriPrompt(){
 };
 
 function myTweets(){
-    twitter.get('statuses/user_timeline', { screen_name: "twitter", count: 10 }, function(error, tweets, response) {
+    twitter.get('statuses/user_timeline', { screen_name: "whataburger", count: 10 }, function(error, tweets, response) {
         if (error) throw error;
 
         for (let i = 0; i < tweets.length; i++) {
-            let printTweets = (i + ". " + tweets[i].created_at + " : " + tweets[i].text + "\n");
-            console.log(printTweets);
-            appendLog(printTweets);
+            let getTweets = (i + "." + tweets[i].created_at + ": " + tweets[i].text + "\n");
+            console.log(getTweets);
+            appendLog(getTweets);
         }
 
         liriPrompt();

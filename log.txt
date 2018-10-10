@@ -1,1 +1,61 @@
 
+0.undefined: undefined
+
+1.undefined: undefined
+
+2.undefined: undefined
+
+3.undefined: undefined
+
+4.undefined: undefined
+
+5.undefined: undefined
+
+6.undefined: undefined
+
+7.undefined: undefined
+
+8.undefined: undefined
+
+9.undefined: undefined
+
+0.Tue Oct 09 19:28:58 +0000 2018: @LiamMcEwan Cute 💙
+
+1.Tue Oct 09 19:28:41 +0000 2018: @adda_boi This Tweet is funny
+
+2.Tue Oct 09 19:28:15 +0000 2018: @RyanAbe @jccaylen Currently: overthinking
+
+3.Tue Oct 09 19:27:56 +0000 2018: @joesmittyyy Be careful, this could backfire
+
+4.Tue Oct 09 19:26:50 +0000 2018: @PowerGotGame Reading other Tweets
+
+5.Tue Oct 09 19:26:04 +0000 2018: @bryanlanning RIP Hashtag Bruce Norbert
+
+6.Tue Oct 09 19:25:16 +0000 2018: @nueports You do, clearly
+
+7.Tue Oct 09 19:24:58 +0000 2018: @Rvptxr He shoots, he scores
+
+8.Tue Oct 09 19:24:30 +0000 2018: @caaadestone 👀
+
+9.Tue Oct 09 19:24:00 +0000 2018: @kevleeb Especially this one https://t.co/pXWLgQBnNa
+
+0.Tue Oct 09 21:59:37 +0000 2018: @gissssssssell We were working on it!
+
+1.Tue Oct 09 21:56:42 +0000 2018: @LANEYBROOKEEE Those are 2 of our favorite things
+
+2.Tue Oct 09 21:46:14 +0000 2018: @duhe_winters Treat yo' self
+
+3.Tue Oct 09 21:45:47 +0000 2018: @Slow_Vertigo We agree with you :)
+
+4.Tue Oct 09 20:31:10 +0000 2018: My scientific approach to decide what I want for dinner https://t.co/v100MICr5h
+
+5.Mon Oct 08 19:29:11 +0000 2018: @gods_flann where's the onion ring at?
+
+6.Mon Oct 08 19:27:38 +0000 2018: @_dosuno True beauty &lt;3
+
+7.Mon Oct 08 19:24:26 +0000 2018: @gods_flann &lt;3 &lt;3
+
+8.Mon Oct 08 19:08:55 +0000 2018: @LiveEncounter1 just thought you should know
+
+9.Mon Oct 08 19:08:37 +0000 2018: @ChrisHager Whataburger and a haircut sound nice right now.  A Ducati does too..
+
