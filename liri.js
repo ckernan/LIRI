@@ -5,6 +5,7 @@ const fs = require("fs");
 const request = require("request");
 const inquirer = require("inquirer");
 const moment = require("moment");
+const chalk = require("chalk")
 const Spotify = require("node-spotify-api");
 const spotify = new Spotify(keys.spotify);
 const Twitter = require('twitter');
@@ -39,12 +40,12 @@ function liriPrompt(){
 };
 
 function myTweets(){
-    twitter.get('statuses/user_timeline', { screen_name: "whataburger", count: 10 }, function(error, tweets, response) {
+    twitter.get('statuses/user_timeline', { screen_name: "nodejs", count: 10 }, function(error, tweets, response) {
         if (error) throw error;
 
         for (let i = 0; i < tweets.length; i++) {
-            let getTweets = (i + "." + tweets[i].created_at + ": " + tweets[i].text + "\n");
-            console.log(getTweets);
+            let getTweets = ((i + 1) + ". " + tweets[i].created_at + " @nodejs: " + tweets[i].text + "\n");
+            console.log(chalk.hex('#6936b5')(getTweets));
             appendLog(getTweets);
         }
 
@@ -67,7 +68,7 @@ function concertThis(){
                      "\nLocation: " + data[0].venue.city +
                      "\nDate: " + moment(data[0].datetime).format("MM/DD/YYYY") + "\n";
 
-                console.log(concertInfo);
+                console.log(chalk.hex('#e56510')(concertInfo));
                 appendLog(concertInfo);
                 liriPrompt();
                 
@@ -99,7 +100,7 @@ function movieThis(){
                     "\nPlot: " + data.Plot +
                     "\nActors: " + data.Actors + "\n";
             
-                console.log(movieInfo);
+                console.log(chalk.hex("#0e9e25")(movieInfo));
                 appendLog(movieInfo);
                 liriPrompt();
             }
@@ -132,7 +133,7 @@ function spotifyThis(){
                 "\nPreview Link: " + JSON.stringify(song.preview_url) +
                 "\nAlbum: " + JSON.stringify(song.album.name) + "\n";
             
-            console.log(songInfo);
+            console.log(chalk.hex('#c607b0')(songInfo));
             appendLog(songInfo);
             liriPrompt();
 
@@ -165,7 +166,8 @@ function doWhatItSays(){
                     "\nPreview Link: " + JSON.stringify(song.preview_url) +
                     "\nAlbum: " + JSON.stringify(song.album.name) + "\n";
                 
-                console.log(songInfo);
+                console.log(chalk.hex('#0919b5')(songInfo));
+                appendLog(songInfo);
                 liriPrompt();
             });
                 break;
