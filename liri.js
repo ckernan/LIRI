@@ -11,13 +11,14 @@ const spotify = new Spotify(keys.spotify);
 const Twitter = require('twitter');
 const twitter = new Twitter(keys.twitter);
 
+/*=============================LIRI PROMPT===============================*/
 
 function liriPrompt(){
     inquirer.prompt([{
         type: "list",
         message: "What would you like LIRI to do?",
         name: "choice",
-        choices: ["my tweets", "concert this", "movie this", "spotify this", "do what it says"]
+        choices: ["my tweets", "concert this", "movie this", "spotify this", "do what it says", "exit LIRI"]
     }]).then(response => {
         switch(response.choice) {
             case "my tweets":
@@ -35,9 +36,13 @@ function liriPrompt(){
             case "do what it says":
                  doWhatItSays();
                  break;
+            case "exit LIRI":
+                 break;
         }
     })
 };
+
+/*=============================MY TWEETS===============================*/
 
 function myTweets(){
     twitter.get('statuses/user_timeline', { screen_name: "nodejs", count: 10 }, function(error, tweets, response) {
@@ -52,6 +57,8 @@ function myTweets(){
         liriPrompt();
     });
 }
+
+/*=============================CONCERT THIS===============================*/
 
 function concertThis(){
     inquirer.prompt([{
@@ -76,6 +83,8 @@ function concertThis(){
         })
     })
 };
+
+/*=============================MOVIE THIS===============================*/
 
 function movieThis(){
     inquirer.prompt([{
@@ -108,6 +117,7 @@ function movieThis(){
     })
 }
 
+/*=============================SPOTIFY===============================*/
 
 function spotifyThis(){
     inquirer.prompt([{
@@ -142,6 +152,8 @@ function spotifyThis(){
     })
 };
 
+/*============================DO WHAT IT SAYS================================*/
+
 function doWhatItSays(){
     fs.readFile("random.txt", "utf8", function(err, data){
         if(err) {
@@ -174,6 +186,8 @@ function doWhatItSays(){
         }
     })
 }
+
+/*=============================APPEND TO LOG.TXT===============================*/
 
 function appendLog(data){
     fs.appendFile("log.txt", data + "\n", function(err) {
