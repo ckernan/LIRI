@@ -70,3 +70,36 @@ Venue: Austin City Limits Music Festival
 Location: Austin
 Date: 10/13/2018
 
+
+Venue: Dante's
+Location: Portland
+Date: 11/29/2018
+
+
+Artist: "Magic Sword"
+Song Title: "Sword of Truth"
+Preview Link: "https://p.scdn.co/mp3-preview/721cf86a85cb38f5964a31296c2919912e89cb02?cid=eb0dd015a48f4049850c45072f30116f"
+Album: "Volume 1"
+
+1. Fri Oct 12 00:50:01 +0000 2018 @nodejs: That's a wrap - at least on the conference portion of #NodeJSInteractive! Thank you to everyone who presented at th… https://t.co/sFQE14Hw8B
+
+2. Fri Oct 12 00:13:58 +0000 2018 @nodejs: RT @thenewstack: After facing initial reluctance internally, @guahanweb found that Disney development teams are starting to enthusiasticall…
+
+3. Thu Oct 11 23:38:40 +0000 2018 @nodejs: RT @WaleedAshraf01: Controlling #Tesla Model 3 with @nodejs by @Alex_Roytman 
+
+#TeslaModel3 #Nodejs #JavaScript #NodeJSInteractive #OpenSou…
+
+4. Thu Oct 11 19:58:06 +0000 2018 @nodejs: #NodeJSInteractive attendees - @JSPartyFM is happening now! Come to West Ballroom A 🎉
+
+5. Thu Oct 11 17:10:58 +0000 2018 @nodejs: .@JSPartyFM is taking the #NodeJSInteractive stage today at 1pm 🎉 Come join!
+
+6. Thu Oct 11 16:40:11 +0000 2018 @nodejs: ICYMI: Node v10.12.0 (Current) was released!!! Notes on the release here: https://t.co/ITSqKJXqX8 🎉
+
+7. Thu Oct 11 01:03:00 +0000 2018 @nodejs: The @code and @azure teams are here at #NodeJSInteractive talking about all things Node+JS. Take a look at their No… https://t.co/L2BpRzg4ER
+
+8. Thu Oct 11 00:56:22 +0000 2018 @nodejs: If you have a big or small question about #nodejs, the folks @NearForm are here to help you at #NodeJSInteractive.… https://t.co/OcUwNrFAG1
+
+9. Wed Oct 10 23:09:17 +0000 2018 @nodejs: Congrats to the @NodeSource team 🎉They are at #NodeJSInteractive if you want to check out all the new updates 😀 https://t.co/7t8NjKcGkc
+
+10. Wed Oct 10 21:34:53 +0000 2018 @nodejs: Do you have dinner plans after today’s #NodeJSInteractive? If not, come meet up with others. We have a few reservat… https://t.co/NVpQw2r5Gw
+

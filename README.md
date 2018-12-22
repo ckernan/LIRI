@@ -42,6 +42,10 @@ If you do not enter a song name for this option, it will return the above inform
 Selecting the <b>do what it says</b> option will result in LIRI reading the the text inside of the random.txt file which calls the <b>spotify this</b> command for the song "I Want it That Way".
 
 Every time one of these options is run, LIRI will log the resulting data into a file called log.txt.
+
+## Preview
+
+![LIRI gif](/images/LIRI-demo.gif)
   
 A video demo of the application can be found [here](https://drive.google.com/file/d/1I923bSeBAAb20YizCbl_nb4VnLEIIEVO/view?usp=sharing).
 
