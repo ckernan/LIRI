@@ -46,6 +46,8 @@ Every time one of these options is run, LIRI will log the resulting data into a 
 ## Preview
 
 ![LIRI gif](/images/LIRI-demo.gif)
+
+### Video DEMO
   
 A video demo of the application can be found [here](https://drive.google.com/file/d/1I923bSeBAAb20YizCbl_nb4VnLEIIEVO/view?usp=sharing).
 
