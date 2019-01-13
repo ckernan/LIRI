@@ -1,4 +1,4 @@
-# liri-node-app
+# LIRI
 
 LIRI is a Language Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data.  When you run the application LIRI will begin with a prompt asking you what you would like to do.  It will display the following list for you to choose from:
 <ul>
